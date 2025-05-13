@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{shared/layouts/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+</head>
+<body>
+    <section layout:fragment="content"
+    class="w-full max-w-sm bg-white p-4 rounded-md shadow-md">
+    <h1 class="text-2xl font-bold text-center mb-4">Đăng Nhập</h1>
+
+    <form th:action="@{/auth/login}" method="post">
+        <div class="mb-3">
+            <input type="text" name="username" placeholder="Tên Tài Khoản" required
+                class="w-full p-2 border border-gray-400 rounded" />
+        </div>
+        <div class="mb-3">
+            <input type="password" name="password" placeholder="Mật Khẩu" required
+                class="w-full p-2 border border-gray-400 rounded" />
+        </div>
+
+        <div class="text-center mb-4">
+            <button type="submit"
+                class="bg-red-700 text-white px-4 py-2 rounded hover:bg-red-800">Đăng Nhập Ngay</button>
+        </div>
+
+        <div class="text-center text-blue-600 space-y-2">
+            <div>
+                <a th:href="@{/auth/resetpassword}" class="hover:underline">Quên Mật Khẩu</a>
+            </div>
+            <div>
+                <a th:href="@{/auth/register}" class="hover:underline">Tạo Tài Khoản Ngay</a>
+            </div>
+        </div>
+    </form>
+</section>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<header class="flex items-center justify-between flex-wrap gap-2 px-4 py-3 w-full">
+  <!-- Left: Logo + Nav -->
+  <div class="flex items-center gap-4 flex-wrap flex-1 min-w-[300px]">
+    <a th:href="@{/}" class="flex-shrink-0">
+      <img th:src="@{/images/img40.png}" alt="VPS Fashion Logo" class="w-12 sm:w-16 h-auto">
+    </a>
+    <nav class="flex flex-wrap gap-2 sm:gap-4 text-sm font-medium text-gray-600">
+      <a th:href="@{/}" class="hover:text-black">Home</a>
+      <a th:href="@{/}" class="hover:text-black">Đồ Nam</a>
+      <a th:href="@{/}" class="hover:text-black">Đồ Nữ</a>
+      <a th:href="@{/}" class="hover:text-black">Đồ Bé Trai</a>
+      <a th:href="@{/}" class="hover:text-black">Đồ Bé Gái</a>
+    </nav>
+  </div>
+
+  <!-- Middle: Search -->
+  <div class="flex items-center bg-gray-200 rounded-full px-2 h-9 w-full sm:w-72 md:w-80 lg:w-96 max-w-full flex-shrink-0">
+    <i class="fas fa-search text-red-500 text-base ml-2"></i>
+    <input type="text" placeholder="Bạn Muốn Tìm gì..."
+      class="flex-1 bg-transparent text-gray-700 placeholder-gray-500 text-sm outline-none px-2" />
+    <button
+      class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-1 text-sm font-medium rounded-r-full">
+      Tìm Kiếm
+    </button>
+  </div>
+
+  <!-- Right: Icons -->
+  <div class="flex items-center space-x-3 text-gray-700 text-xl ml-auto">
+    <a th:href="@{/auth/login}" class="hover:text-black">
+      <img th:src="@{/images/user.png}" alt="" class="w-6 h-6">
+    </a>
+    <a th:href="@{/store}" class="hover:text-black">
+      <img th:src="@{/images/shop.png}" alt="" class="w-6 h-6">
+    </a>
+    <a th:href="@{/orders}" class="hover:text-black">
+      <img th:src="@{/images/favorite.png}" alt="" class="w-6 h-6">
+    </a>
+    <a th:href="@{/cart}" class="hover:text-black">
+      <img th:src="@{/images/card.png}" alt="" class="w-6 h-6">
+    </a>
+  </div>
+</header>

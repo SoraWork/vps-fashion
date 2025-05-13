@@ -1,0 +1,57 @@
+<footer layout:fragment="footer" class="bg-gray-800 text-white py-6 px-0">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Về Chúng Tôi -->
+        <div>
+            <h3 class="text-xl font-bold mb-2">VỀ CHÚNG TÔI</h3>
+            <p class="text-sm leading-relaxed">
+                Vuong-Group - Khoác lên niềm vui gia đình Việt Nam 2022, Công ty Cổ phần Thương mại và Dịch vụ Vuong-Group được thành lập với mục đích chính ban đầu là hoạt động trong lĩnh vực sản xuất hàng thời trang xuất khẩu với các sản phẩm chủ yếu làm từ len và sợi. Năm 2023 thương hiệu thời trang VPS ra đời, hứa hẹn trở thành một cột mốc đáng nhớ của doanh nghiệp Việt trong ngành thời trang. Mang đến niềm vui cho hàng triệu gia đình Việt, VPS hướng đến mục tiêu mang lại niềm vui mặc mới mỗi ngày cho hàng triệu người tiêu dùng Việt. Chúng tôi tin rằng người dân Việt Nam cũng đang hướng đến một cuộc sống năng động, tích cực hơn.
+            </p>
+        </div>
+
+
+        <div>
+            <h3 class="text-xl font-bold mb-2">ĐƯỜNG DẪN</h3>
+            <ul class="space-y-1 text-sm">
+                <li><a th:href="@{/}" class="hover:underline">Trang chủ</a></li>
+                <br>
+                <li><a th:href="@{/about}" class="hover:underline">Về chúng tôi</a></li>
+                <br>
+                <li><a href="#" class="hover:underline">Thông tin liên hệ</a></li>
+            </ul>
+        </div>
+
+        <!-- Thông Tin Liên Hệ -->
+        <div>
+        <div>
+            <h3 class="text-xl font-bold mb-2">THÔNG TIN LIÊN HỆ</h3>
+
+            <p class="text-sm flex items-start mb-1">
+                <i class="fas fa-map-marker-alt mt-1"></i>
+                <span class="ml-2">Địa chỉ: 125A6 Trần Huy Liệu, Quận Ba Đình, Hà Nội</span>
+            </p>
+
+            <p class="text-sm flex items-start mb-1">
+                <i class="fas fa-phone mt-1"></i>
+                <span class="ml-2">+84 363652758</span>
+            </p>
+
+            <p class="text-sm flex items-start mb-1">
+                <i class="fab fa-facebook mt-1"></i>
+                <span class="ml-2">Facebook</span>
+            </p>
+
+            <p class="text-sm flex items-start mb-2">
+                <i class="fas fa-envelope mt-1"></i>
+                <a href="mailto:nguyenquocvuong27042002@gmail.com" class="ml-2 hover:underline">
+                    nguyenquocvuong27042002@gmail.com
+                </a>
+            </p>
+        </div>
+
+            <form class="flex mt-2">
+                <input type="email" placeholder="Email address" class="w-1/2 px-2 py-1 text-black rounded-l" required>
+                <button type="submit" class="bg-white text-black px-3 py-1 rounded-r">Gửi</button>
+            </form>
+        </div>
+    </div>
+</footer>
