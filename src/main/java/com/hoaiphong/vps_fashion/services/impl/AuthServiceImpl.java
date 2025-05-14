@@ -74,9 +74,9 @@ public class AuthServiceImpl implements AuthService, UserDetailsService {
 
    @Override
    public UUID save(ForgotPasswordDTO forgotPasswordDTO) {
-       var user = accountRepository.findByUsername(forgotPasswordDTO.getUsername());
+       var user = accountRepository.findByUsernameAndEmail(forgotPasswordDTO.getUsername(), forgotPasswordDTO.getEmail());
        if (user == null) {
-           throw new UsernameNotFoundException("User not found");
+           throw new IllegalArgumentException("User or Email is not correct");
        }
        user.setPassword(passwordEncoder.encode(forgotPasswordDTO.getPassword()));
        return accountRepository.save(user).getId();
