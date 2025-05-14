@@ -13,6 +13,8 @@ public interface AccountRepository  extends JpaRepository<User, UUID>, JpaSpecif
 
     User findByEmail(String email);
 
+    User findByUsernameAndEmail(String username, String email);
+
     boolean existsByUsername(String username);
 
     boolean existsByEmail(String email);
