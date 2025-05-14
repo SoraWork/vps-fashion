@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{shared/layouts/layout}">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{shared/layouts/layoutUser}">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,42 @@
 
 <body>
     <section layout:fragment="content" class="text-center">
-       
+        <!-- Banner -->
+        <section class="w-screen overflow-hidden">
+            <img th:src="@{/images/image5.png}" alt="VPS Fashion Logo" class="w-full h-auto sm:w-full h-auto">
+        </section>
+        <!-- Danh Mục Sản Phẩm -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 24px 10px;">
+    <h2 class="text-2xl font-bold">Danh Mục Sản Phẩm</h2>
+    <img src="/images/sup.png" alt="Hỗ trợ" style="height: 60px; object-fit: contain;" />
+</div>
+
+        <div th:each="category : ${categories}" class="mb-10 text-left px-6">
+            <!-- Tiêu đề danh mục -->
+            <h3 th:text="${category.name}" class="text-xl font-semibold mb-4 pb-2"></h3>
+
+            <!-- Danh sách sản phẩm -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
+                <div th:each="product : ${category.products}" class="text-center bg-white rounded shadow p-2">
+                    <img th:src="@{'/images/clothes/' + ${product.image}}"
+     class="w-[400px] h-auto object-cover mx-auto mb-2" 
+     th:alt="${product.name}" 
+     alt="${product.name}" />
+
+                    <p th:text="${product.name}" class="font-medium text-sm mb-1"></p>
+                    <p th:text="'Giá: ' + ${#numbers.formatDecimal(product.price, 0, 'POINT', 0, 'COMMA')} + ' đ'"
+                        class="font-semibold text-sm"></p>
+                </div>
+            </div>
+        </div>
+
+       <!-- Nút xem thêm -->
+<!-- Nút xem thêm -->
+<div class="text-center my-6">
+    <button class="w-full max-w-md px-24 py-3 bg-white text-black border-2 border-black rounded hover:bg-gray-100">
+        Xem Thêm
+    </button>
+</div>
     </section>
 </body>
 
