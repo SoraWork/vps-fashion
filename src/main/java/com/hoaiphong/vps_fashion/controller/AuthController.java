@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.hoaiphong.vps_fashion.dtos.auth.ForgotPasswordDTO;
 import com.hoaiphong.vps_fashion.dtos.auth.RegisterDTO;
 import com.hoaiphong.vps_fashion.services.AuthService;
 
@@ -24,9 +25,15 @@ public class AuthController {
 
     @GetMapping("/auth/resetpassword")
     public String register(Model model) {
-        var registerDTO = new RegisterDTO();
-        model.addAttribute("registerDTO", registerDTO);
+        var forgotpasswordDTO = new ForgotPasswordDTO();
+        model.addAttribute("forgotpasswordDTO", forgotpasswordDTO);
         return "auth/resetpassword";
+    }
+    
+    @PostMapping("/auth/resetpassword")
+    public String resetpassword(@ModelAttribute("forgotpasswordDTO") ForgotPasswordDTO forgotpasswordDTO) {
+        authService.save(forgotpasswordDTO);
+        return "redirect:/auth/login";
     }
 
     @GetMapping("/auth/register")
